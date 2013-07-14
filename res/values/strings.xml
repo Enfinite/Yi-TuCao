@@ -3,8 +3,8 @@
 
     <string name="app_name">易吐槽</string>
     <string name="action_settings">Settings</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Tab 1</string>
+    <string name="title_section2">Tab 2</string>
+    <string name="title_section3">Tab 3</string>
 
 </resources>
