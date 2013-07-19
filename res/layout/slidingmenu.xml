@@ -2,21 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/content_frame"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
-
-<!-- <?xml version="1.0" encoding="utf-8"?>     
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="horizontal" >     
-          
-<fragment 
-    android:name="com.example.slidemenutest.SlidingMenuFragment"
-    android:id="@+id/fragment1"
-    android:layout_weight="0.5"
-    android:layout_width="0dp"
-    android:layout_height="200dp" />     
-          
-</LinearLayout> -->
+    android:layout_height="match_parent" 
+    android:background="@color/slidemenu_color2"/>
 
 <!-- 侧边栏菜单显示布局 -->

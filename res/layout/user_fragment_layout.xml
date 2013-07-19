@@ -3,12 +3,128 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">     
-              
-    <ListView 
-        android:id="@id/android:list"
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#424453">
+        <!-- 登录之前显示 -->"
+    <LinearLayout 
+        android:id="@+id/before_login"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"               
-        android:layout_weight="1"
-        android:drawSelectorOnTop="false"/>     
-                                         
+        android:layout_height="wrap_content"
+        >
+        <Button android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/string_login"
+            android:background="@drawable/login_button_selector"
+            android:textStyle="bold" 
+            android:textColor="#FFFFFF">   
+        </Button>
+        <Button android:id="@+id/register"
+            android:layout_weight="1.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/string_register"
+            android:background="@drawable/register_button_selector"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" 
+            >   
+        </Button>
+    </LinearLayout>
+    <!-- 登录以后显示 -->
+
+    <LinearLayout
+        android:id="@+id/after_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/userImage"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:src="@drawable/mini_avatar" >
+        </ImageView>
+
+        <Spinner
+            android:id="@+id/uNameSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="60dip"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="4dp"
+            android:ellipsize="marquee" >
+        </Spinner>
+    </LinearLayout>
+    </FrameLayout>
+    
+     <!-- 中间的分隔线 -->
+    <!-- <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#666666"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp">
+        
+    </TextView> -->
+    
+    <TableLayout android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:padding="10dip"
+        android:background="#495162">
+    	<TableRow android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_table_row"
+        android:padding="10dp" 
+        >
+        <ListView android:id="@+id/slidemenu_list1" 
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            />
+    	</TableRow>
+    
+    	<TableRow android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_table_row"
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
+        	<ListView android:id="@+id/slidemenu_list2"
+        	android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+        	    />
+     	</TableRow>"
+        
+    	<TableRow android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_table_row"
+        android:padding="10dp"
+        android:layout_marginTop="10dp">
+        	<ListView android:id="@+id/slidemenu_list3"
+        	 android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+        	    />
+    	</TableRow>  
+    </TableLayout>                                              
 </LinearLayout>

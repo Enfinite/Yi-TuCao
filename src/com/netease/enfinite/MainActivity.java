@@ -19,8 +19,10 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
+import android.widget.ImageView;
 
 public class MainActivity extends FragmentActivity {
 
@@ -50,6 +52,8 @@ public class MainActivity extends FragmentActivity {
 	private CanvasTransformer mTransformer;
 	private Interpolator mInterp;
 	SlidingMenu mSlidingMenu;
+	
+	private View actionbar_view;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -71,11 +75,8 @@ public class MainActivity extends FragmentActivity {
 		mViewPager.setCurrentItem(pagerCount*1000);//默认显示第二个tab页面
 		
 		initiateSlideMenu(); //初始化侧边栏菜单
-		
-		ActionBar bar = getActionBar();
-		bar.setDisplayHomeAsUpEnabled(true);//ActionBar左上角显示箭头
-		bar.setDisplayShowHomeEnabled(false);//左上角不显示应用图标
-
+	
+		initActionBar();//初始化自定义的actionbar
 	}
 
 	@Override
@@ -114,6 +115,34 @@ public class MainActivity extends FragmentActivity {
 		list.add(new XinXian_Fragment());
 		return list;
 	}
+	
+	/**
+	 * 初始化自定义的actionbar
+	 */
+	private void initActionBar(){
+		ActionBar bar = getActionBar();
+		//bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
+		//bar.setDisplayHomeAsUpEnabled(true);//ActionBar左上角显示箭头
+		//bar.setDisplayShowHomeEnabled(true);//左上角不显示应用图标
+		bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		actionbar_view = (View)getLayoutInflater().inflate(R.layout.style_actionbar, null);
+		ImageView actionbarImage = (ImageView)actionbar_view.findViewById(R.id.actionbar_image);
+		actionbarImage.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				switch (v.getId()) {
+				case R.id.actionbar_image:
+					mSlidingMenu.toggle(true);
+					break;
+				default:
+					break;
+			}
+			}
+		});
+		bar.setCustomView(actionbar_view);
+	}
 
 	/**
 	 * 初始化侧边栏菜单的方法
@@ -127,11 +156,18 @@ public class MainActivity extends FragmentActivity {
 			}		
 		};
 		
-		mTransformer = new CanvasTransformer() {
+		/*mTransformer = new CanvasTransformer() {
 			@Override
 			public void transformCanvas(Canvas canvas, float percentOpen) {
 				canvas.translate(0, canvas.getHeight()*(1-mInterp.getInterpolation(percentOpen)));
 			}			
+		};*/
+		
+		mTransformer = new CanvasTransformer() {
+			@Override
+			public void transformCanvas(Canvas canvas, float percentOpen) {
+				canvas.scale(percentOpen, 1, 0, 0);
+			}	
 		};
 		
 		mSlidingMenu = new SlidingMenu(getApplicationContext());

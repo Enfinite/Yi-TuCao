@@ -9,5 +9,23 @@
     <string name="string_ShengHuo">吐槽生活</string>
     <string name="string_XinXian">吐得新鲜</string>
     <string name="string_JingYan">吐得惊艳</string>
+    
+    <string name="string_login">登 录</string>
+    <string name="string_register">注 册</string> 
+    <string name="string_item1">我的吐槽</string> 
+    <string name="string_item2">我的收藏</string> 
+    <string name="string_item3">我的参与</string> 
+    
+    <string name="string_item4">清除缓存</string> 
+    <string name="string_item5">自动检测更新</string> 
+    
+    <string name="string_item6">错误反馈</string> 
+    <string name="string_item7">去应用市场评分</string> 
+    <string name="string_item8">关于易吐槽</string> 
+    
+    <string name="enter_email">请输入邮箱</string>
+    <string name="enter_password">请输入密码</string>
+    <string name="register"><u>注册</u></string>
+    <string name="forget_password"><u>忘记密码？</u></string>
 
 </resources>
