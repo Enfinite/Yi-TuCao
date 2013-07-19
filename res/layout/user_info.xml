@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="@color/pagetabstrip_background"
+    android:orientation="vertical"
+    >
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:orientation="horizontal"
+        android:background="@color/edit_text_background">
+        <ImageView android:id="@+id/userImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="#000000"
+            >
+        </ImageView>"
+        <EditText android:id="@+id/userName"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:text="LCD"
+            android:inputType="text"
+            android:singleLine="true"
+            android:maxLength="10"
+            android:layout_marginRight="12dp">
+            
+        </EditText>
+            "
+    </LinearLayout>
+    
+    <TextView  android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/share_bind"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="17dp"
+        android:textColor="#BEBEBE"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        />
+    <!-- sina 绑定 -->
+    <RelativeLayout
+          android:id="@+id/bind_sina"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="17dp"
+         android:layout_marginRight="17dp"
+         android:layout_marginTop="15dp"
+         android:background="@drawable/share_bind_button_shape"
+         android:clickable="true"
+         android:orientation="horizontal" >
+
+         <TextView
+             android:id="@+id/text1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerInParent="true"
+             android:layout_gravity="center"
+             android:text="@string/sina"
+             android:textColor="@color/text_color_white"
+             android:textSize="18sp"
+             android:duplicateParentState="true"
+             android:textStyle="bold" />
+
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentTop="true"
+             android:layout_marginRight="14dp"
+             android:layout_marginLeft="17dp"
+             android:layout_toLeftOf="@+id/text1"
+             android:duplicateParentState="true"
+             android:gravity="center"
+             android:padding="5dp"
+             android:src="@drawable/sina" />
+     </RelativeLayout>
+     
+    <!-- QQ空间绑定 -->
+     
+    <RelativeLayout
+          android:id="@+id/bind_qqzone"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="17dp"
+         android:layout_marginRight="17dp"
+         android:layout_marginTop="15dp"
+         android:background="@drawable/share_bind_button_shape"
+         android:clickable="true"
+         android:orientation="horizontal" >
+
+         <TextView
+             android:id="@+id/text2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerInParent="true"
+             android:layout_gravity="center"
+             android:text="@string/qqzone"
+             android:textColor="@color/text_color_white"
+             android:textSize="18sp"
+             android:duplicateParentState="true"
+             android:textStyle="bold" />
+
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentTop="true"
+             android:layout_marginRight="16dp"
+             android:layout_marginLeft="17dp"
+             android:layout_toLeftOf="@+id/text2"
+             android:duplicateParentState="true"
+             android:gravity="center"
+             android:padding="5dp"
+             android:src="@drawable/qqzone" />
+     </RelativeLayout>
+     
+    <!--  豆瓣绑定 -->
+     
+    <RelativeLayout
+          android:id="@+id/bind_douban"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="17dp"
+         android:layout_marginRight="17dp"
+         android:layout_marginTop="15dp"
+         android:background="@drawable/share_bind_button_shape"
+         android:clickable="true"
+         android:orientation="horizontal" >
+
+         <TextView
+             android:id="@+id/text3"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerInParent="true"
+             android:layout_gravity="center"
+             android:text="@string/douban"
+             android:textColor="@color/text_color_white"
+             android:textSize="18sp"
+             android:duplicateParentState="true"
+             android:textStyle="bold" />
+
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentTop="true"
+             android:layout_marginRight="25dp"
+             android:layout_toLeftOf="@+id/text3"
+             android:duplicateParentState="true"
+             android:gravity="center"
+             android:padding="5dp"
+             android:src="@drawable/douban" />
+
+     </RelativeLayout>
+    
+    
+    
+     <Button android:id="@+id/logout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:text="@string/string_logout"
+        android:textColor="@color/text_color_white"
+        android:background="@drawable/login_button_selector"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        />
+</LinearLayout>

@@ -11,6 +11,7 @@
     <string name="string_JingYan">吐得惊艳</string>
     
     <string name="string_login">登 录</string>
+    <string name="string_logout">退出当前账户</string>
     <string name="string_register">注 册</string> 
     <string name="string_item1">我的吐槽</string> 
     <string name="string_item2">我的收藏</string> 
@@ -25,7 +26,18 @@
     
     <string name="enter_email">请输入邮箱</string>
     <string name="enter_password">请输入密码</string>
-    <string name="register"><u>注册</u></string>
-    <string name="forget_password"><u>忘记密码？</u></string>
+    <string name="register_account"><u>注册账户</u></string>
+    <string name="forget_password"><u>忘记密码</u></string>
+    
+    <string name="string_or">or</string>
+    <string name="string_weibo_login">新浪微博账户登录</string>
+    <string name="string_qq_login">QQ账户登录</string>
+    
+    <string name="string_user_info">个人资料</string>
+    <string name="share_bind">社会化分享绑定</string>
+    
+    <string name="sina">新浪微博</string>
+    <string name="qqzone">QQ空间</string>
+    <string name="douban">豆   瓣</string>
 
 </resources>

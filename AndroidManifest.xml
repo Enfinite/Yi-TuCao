@@ -25,6 +25,9 @@
          <activity
             android:name="com.netease.enfinite.usermanager.LoginActivity" >
         </activity>
+        <activity
+            android:name="com.netease.enfinite.usermanager.UserInfoActivity" >
+        </activity>
     </application>
 
 </manifest>

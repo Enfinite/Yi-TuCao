@@ -9,4 +9,12 @@
         <color name="pagetabstrip_background">#F0F0F0</color>
         <color name="pagetabstrip_text">#999999</color>
         <color name="edit_text_background">#DFDFDF</color>
+       <color name="divider">#D1D1D1</color>
+       <color name="weibo_login_button">#E35254</color>
+       <color name="qq_login_button">#5DA9D6</color>
+       <color name="unbind">#C8C8C8</color>
+       <color name="qqzone_bind">#FFAA00</color>
+       <color name="weibo_bind">#E35254</color>
+       <color name="netease_bind">#E35254</color>
+       <color name="douban_bind">#5FC15F</color>
     </resources>

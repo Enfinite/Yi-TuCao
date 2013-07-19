@@ -6,8 +6,10 @@ import java.util.Locale;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.CanvasTransformer;
+import com.netease.enfinite.slidemenu.SlidingMenuFragment;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -34,6 +36,9 @@ public class MainActivity extends FragmentActivity {
 	 * intensive, it may be best to switch to a
 	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
 	 */
+	
+	private static final String TAG_STRING = "MainActivity";
+	
 	SectionsPagerAdapter mSectionsPagerAdapter;
 
 	/**
@@ -100,6 +105,15 @@ public class MainActivity extends FragmentActivity {
 		
 	}
 	
+	
+	
+	@Override
+	protected void onActivityResult(int arg0, int arg1, Intent arg2) {
+		// TODO Auto-generated method stub
+		Log.i(TAG_STRING, "onActivityResult "+arg0+" "+arg1);
+		super.onActivityResult(arg0, arg1, arg2);
+	}
+
 	/**
 	 * 初始化各个页面的Fragment
 	 * @param size 页面的数量

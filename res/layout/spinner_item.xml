@@ -4,9 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content"
-    android:textSize="35sp"
+    android:textSize="20sp"
     android:gravity="center_vertical"  
-    android:textColor="#333333" 
+    android:textColor="@color/text_color_white" 
     android:textStyle="bold"        
     android:padding="2dip"
     />
