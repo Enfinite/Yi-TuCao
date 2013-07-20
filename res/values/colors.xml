@@ -17,4 +17,8 @@
        <color name="weibo_bind">#E35254</color>
        <color name="netease_bind">#E35254</color>
        <color name="douban_bind">#5FC15F</color>
+       <color name="button_selected">#FF9966</color>
+       <color name="page_background">#DEDEDE</color>
+       <color name="list_item_general_background">#EDEDED</color>
+       <color name="list_item_general_text_color">#818181</color>
     </resources>

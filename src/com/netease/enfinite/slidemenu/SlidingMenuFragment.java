@@ -6,6 +6,8 @@ import java.util.HashMap;
 import com.netease.enfinite.R;
 import com.netease.enfinite.slidemenu.ListViewAdapter;
 import com.netease.enfinite.usermanager.LoginActivity;
+import com.netease.enfinite.usermanager.RegisterActivity;
+import com.netease.enfinite.usermanager.UserInfo;
 import com.netease.enfinite.usermanager.UserInfoActivity;
 
 import android.app.Fragment;
@@ -19,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -31,6 +34,7 @@ public class SlidingMenuFragment extends Fragment {
 	private Button loginButton;
 	private Button registerButton ;
 	private Spinner uNameSpinner;
+	private ImageView userImage;
 	private LinearLayout before_loginView;
 	private LinearLayout after_loginView;
 	
@@ -50,6 +54,8 @@ public class SlidingMenuFragment extends Fragment {
 	//转到UserInfoActivity
 	public static final int REQUEST_CODE_USER_INFO = 2;
 	
+	//转到registeractivity
+	public static final int REQUEST_CODE_REGISTER = 3;
 	
 	
 	@Override
@@ -75,7 +81,8 @@ public class SlidingMenuFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(getActivity(), "Press register", Toast.LENGTH_LONG).show();
+				Intent intent = new Intent(getActivity(),RegisterActivity.class);
+				startActivityForResult(intent, REQUEST_CODE_REGISTER);
 			}
 		});
          
@@ -86,7 +93,9 @@ public class SlidingMenuFragment extends Fragment {
          
          /**
           * 登录以后初始化用户名以及用户头像
+          * 
           */
+         userImage = (ImageView) view.findViewById(R.id.userImage);
          uNameSpinner = (Spinner)view.findViewById(R.id.uNameSpinner);
          ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item,
         		 new String[]{"Enfinite"});
@@ -135,8 +144,33 @@ public class SlidingMenuFragment extends Fragment {
 				after_loginView.setVisibility(View.GONE);
 				before_loginView.setVisibility(View.VISIBLE);
 			}
+			else{
+				if(UserInfo.getUser_image() != null)
+					userImage.setImageDrawable(UserInfo.getUser_image());
+				String user_nameString = UserInfo.getUser_name();
+				if( user_nameString != null){
+					ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, new String[]{user_nameString});
+					uNameSpinner.setAdapter(spinnerAdapter);
+				}
+			}
 			
+		case REQUEST_CODE_REGISTER:  //从register返回
+			if(resultCode == RegisterActivity.REGISTER_FAIL){ 
 				
+			}
+			else if(resultCode == RegisterActivity.REGISTER_OK){ //注册成功
+				before_loginView.setVisibility(View.GONE);
+	            after_loginView.setVisibility(View.VISIBLE);
+	            if(UserInfo.getUser_image() != null)
+					userImage.setImageDrawable(UserInfo.getUser_image());
+				String user_nameString = UserInfo.getUser_name();
+				if( user_nameString != null){
+					ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item, new String[]{user_nameString});
+					uNameSpinner.setAdapter(spinnerAdapter);
+				}
+			}
+			break ;
+	
 		default:
 			break;
 		}
@@ -152,16 +186,16 @@ public class SlidingMenuFragment extends Fragment {
 		arrayList1 = new ArrayList<HashMap<String,Object>>();
 		HashMap<String, Object> tempHashMap1 = new HashMap<String, Object>();
 		tempHashMap1.put("TextViewResID", getResources().getString(R.string.string_item1));
-		tempHashMap1.put("ImageViewResID", R.drawable.ic_right_arrow);
+		tempHashMap1.put("ImageViewResID", R.drawable.ic_right_arrow1);
 		//tempHashMap.put("CheckBoxShow", 0);
 		arrayList1.add(tempHashMap1);
 		HashMap<String, Object> tempHashMap2 = new HashMap<String, Object>();
 		tempHashMap2.put("TextViewResID", getResources().getString(R.string.string_item2));
-		tempHashMap2.put("ImageViewResID", R.drawable.ic_right_arrow);
+		tempHashMap2.put("ImageViewResID", R.drawable.ic_right_arrow1);
 		arrayList1.add(tempHashMap2);
 		HashMap<String, Object> tempHashMap3 = new HashMap<String, Object>();
 		tempHashMap3.put("TextViewResID", getResources().getString(R.string.string_item3));
-		tempHashMap3.put("ImageViewResID", R.drawable.ic_right_arrow);
+		tempHashMap3.put("ImageViewResID", R.drawable.ic_right_arrow1);
 		//tempHashMap.put("CheckBoxShow", 0);
 		arrayList1.add(tempHashMap3);
 		listView1.setAdapter(new ListViewAdapter(getActivity(), arrayList1));
@@ -182,17 +216,17 @@ public class SlidingMenuFragment extends Fragment {
 		arrayList3 = new ArrayList<HashMap<String,Object>>();
 		HashMap<String, Object> tempHashMap1 = new HashMap<String, Object>();
 		tempHashMap1.put("TextViewResID", getResources().getString(R.string.string_item6));
-		tempHashMap1.put("ImageViewResID", R.drawable.ic_right_arrow);
+		tempHashMap1.put("ImageViewResID", R.drawable.ic_right_arrow1);
 		//tempHashMap.put("CheckBoxShow", 0);
 		arrayList3.add(tempHashMap1);
 		HashMap<String, Object> tempHashMap2 = new HashMap<String, Object>();
 		tempHashMap2.put("TextViewResID", getResources().getString(R.string.string_item7));
-		tempHashMap2.put("ImageViewResID", R.drawable.ic_right_arrow);
+		tempHashMap2.put("ImageViewResID", R.drawable.ic_right_arrow1);
 		//tempHashMap.put("CheckBoxShow", 0);
 		arrayList3.add(tempHashMap2);
 		HashMap<String, Object> tempHashMap3 = new HashMap<String, Object>();
 		tempHashMap3.put("TextViewResID", getResources().getString(R.string.string_item8));
-		tempHashMap3.put("ImageViewResID", R.drawable.ic_right_arrow);
+		tempHashMap3.put("ImageViewResID", R.drawable.ic_right_arrow1);
 		//tempHashMap.put("CheckBoxShow", 0);
 		arrayList3.add(tempHashMap3);
 		listView3.setAdapter(new ListViewAdapter(getActivity(), arrayList3));

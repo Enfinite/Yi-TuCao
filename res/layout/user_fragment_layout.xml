@@ -103,6 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
+            android:divider="#606172"
             />
     	</TableRow>
     
@@ -115,6 +116,7 @@
         	android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
+             android:divider="#606172"
         	    />
      	</TableRow>"
         
@@ -127,6 +129,7 @@
         	 android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
+             android:divider="#606172"
         	    />
     	</TableRow>  
     </TableLayout>                                              

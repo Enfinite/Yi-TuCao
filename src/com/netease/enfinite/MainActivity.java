@@ -54,8 +54,8 @@ public class MainActivity extends FragmentActivity {
 	/**
 	 * 侧边栏菜单及其显示动画相关的成员变量
 	 */
-	private CanvasTransformer mTransformer;
-	private Interpolator mInterp;
+	/*private CanvasTransformer mTransformer;
+	private Interpolator mInterp;*/
 	SlidingMenu mSlidingMenu;
 	
 	private View actionbar_view;
@@ -82,6 +82,8 @@ public class MainActivity extends FragmentActivity {
 		initiateSlideMenu(); //初始化侧边栏菜单
 	
 		initActionBar();//初始化自定义的actionbar
+		
+		setContentView(R.layout.list_item_general);
 	}
 
 	@Override
@@ -135,10 +137,10 @@ public class MainActivity extends FragmentActivity {
 	 */
 	private void initActionBar(){
 		ActionBar bar = getActionBar();
-		//bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
-		//bar.setDisplayHomeAsUpEnabled(true);//ActionBar左上角显示箭头
-		//bar.setDisplayShowHomeEnabled(true);//左上角不显示应用图标
-		bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));
+		bar.setDisplayHomeAsUpEnabled(true);//ActionBar左上角显示箭头
+		bar.setDisplayShowHomeEnabled(false);//左上角不显示应用图标
+		/*bar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 		actionbar_view = (View)getLayoutInflater().inflate(R.layout.style_actionbar, null);
 		ImageView actionbarImage = (ImageView)actionbar_view.findViewById(R.id.actionbar_image);
 		actionbarImage.setOnClickListener(new View.OnClickListener() {
@@ -155,20 +157,20 @@ public class MainActivity extends FragmentActivity {
 			}
 			}
 		});
-		bar.setCustomView(actionbar_view);
+		bar.setCustomView(actionbar_view);*/
 	}
 
 	/**
 	 * 初始化侧边栏菜单的方法
 	 */
 	private void initiateSlideMenu(){
-	   mInterp = new Interpolator() {
+	   /*mInterp = new Interpolator() {
 			@Override
 			public float getInterpolation(float t) {
 				t -= 1.0f;
 				return t * t * t + 1.0f;
 			}		
-		};
+		};*/
 		
 		/*mTransformer = new CanvasTransformer() {
 			@Override
@@ -177,12 +179,12 @@ public class MainActivity extends FragmentActivity {
 			}			
 		};*/
 		
-		mTransformer = new CanvasTransformer() {
+		/*mTransformer = new CanvasTransformer() {
 			@Override
 			public void transformCanvas(Canvas canvas, float percentOpen) {
 				canvas.scale(percentOpen, 1, 0, 0);
 			}	
-		};
+		};*/
 		
 		mSlidingMenu = new SlidingMenu(getApplicationContext());
 		mSlidingMenu.setMode(SlidingMenu.LEFT);
@@ -194,7 +196,7 @@ public class MainActivity extends FragmentActivity {
 		mSlidingMenu.setFadeDegree(0.35f);
 		mSlidingMenu.attachToActivity(this, SlidingMenu.SLIDING_WINDOW);
 		mSlidingMenu.setSlidingEnabled(true);
-		mSlidingMenu.setBehindCanvasTransformer(mTransformer);
+		//mSlidingMenu.setBehindCanvasTransformer(mTransformer);
 		mSlidingMenu.setMenu(R.layout.slidingmenu);
 		
 		getFragmentManager()

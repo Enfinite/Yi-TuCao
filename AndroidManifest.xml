@@ -7,11 +7,15 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="14" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
-        android:icon="@drawable/ic_home"
         android:theme="@style/AppTheme" >
       <activity
             android:name="com.netease.enfinite.MainActivity"
@@ -28,6 +32,39 @@
         <activity
             android:name="com.netease.enfinite.usermanager.UserInfoActivity" >
         </activity>
+        <activity
+            android:name="com.netease.enfinite.usermanager.RegisterActivity" >
+        </activity>
+        
+        <!-- 用户回调新浪微博的Activity -->
+        <activity android:name="com.baidu.sharesdk.PlatformSsoCallBackActivity"
+                  android:label="@string/app_name" 
+                  android:exported="true"
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+        </activity>
+        
+        <!-- 腾讯SSO回调的 activity -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100380359" />
+            </intent-filter>
+        </activity>
+         <!-- 用于SSO回调的activity -->
+         <activity
+            android:name="com.baidu.social.core.PlatformSsoCallBackActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+        
     </application>
 
 </manifest>
